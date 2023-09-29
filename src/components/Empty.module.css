@@ -1,0 +1,25 @@
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 4rem 1.5rem;
+  border-radius: 8px;
+  border-top: 1px solid var(--gray-400);
+}
+
+.empty svg {
+  width: 3.5rem;
+  height: 3.5rem;
+
+  color: var(--gray-400);
+}
+
+.empty p {
+  color: var(--gray-300);
+}
+
+.empty p:first-child {
+  font-weight: 700;
+}

@@ -6,3 +6,9 @@
   flex-direction: column;
   gap: 4rem;
 }
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

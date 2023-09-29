@@ -1,0 +1,15 @@
+.button {
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  gap: 8px;
+
+  border: 0;
+  border-radius: 8px;
+  background: var(--blue-dark);
+
+  color: var(--gray-100);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 140%;
+}

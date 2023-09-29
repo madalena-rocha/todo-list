@@ -1,0 +1,26 @@
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.info div {
+  display: flex;
+  gap: 8px;
+
+  font-size: 0.875rem;
+}
+
+.info div span {
+  padding: 2px 8px;
+  
+  border-radius: 999px;
+  background: var(--gray-400);
+}
+
+.created strong {
+  color: var(--blue);
+}
+
+.done strong {
+  color: var(--purple);
+}

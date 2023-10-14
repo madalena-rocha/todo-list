@@ -13,6 +13,8 @@
   --gray-700: #0D0D0D;
 
   --danger: #E25858;
+
+  font-size: 62.5%;
 }
 
 * {
@@ -30,6 +32,6 @@ body {
 body, input, textarea, button {
   font-family: "Inter", sans-serif;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.6rem;
   line-height: 140%;
 }

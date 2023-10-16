@@ -1,9 +1,3 @@
-.tasks {
-  display: flex;
-  flex-direction: column;
-  gap: 2.4rem;
-}
-
 .info {
   display: flex;
   justify-content: space-between;

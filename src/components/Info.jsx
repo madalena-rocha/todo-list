@@ -1,6 +1,6 @@
 import styles from './Info.module.css';
 
-export function Info() {
+export function Info({ completedTasks }) {
   return (
     <div className={styles.info}>
       <div className={styles.created}>
@@ -10,7 +10,7 @@ export function Info() {
 
       <div className={styles.done}>
         <strong>Concluídas</strong>
-        <span>0</span>
+        <span>{ completedTasks } de 5</span>
       </div>
     </div>
   );

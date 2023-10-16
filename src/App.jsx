@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { Header } from './components/Header';
 import { NewTask } from './components/NewTask';
 import { Info } from './components/Info';
@@ -7,6 +9,16 @@ import styles from './App.module.css';
 import './global.css';
 
 function App() {
+  const [completedTasks, setCompletedTasks] = useState(0);
+
+  const handleTaskComplete = (isComplete) => {
+    if (isComplete) {
+      setCompletedTasks(completedTasks + 1);
+    } else {
+      setCompletedTasks(completedTasks - 1);
+    }
+  }
+
   return (
     <div>
       <Header />
@@ -16,11 +28,11 @@ function App() {
 
         <main>
           <div className={styles.tasks}>
-            <Info />
+            <Info completedTasks={completedTasks} />
 
             <div className={styles.list}>
-              <Task />
-              <Task />
+              <Task onTaskComplete={handleTaskComplete} />
+              <Task onTaskComplete={handleTaskComplete} />
             </div>
           </div>
         </main>

@@ -1,7 +1,7 @@
 import { Header } from './components/Header';
 import { NewTask } from './components/NewTask';
 import { Info } from './components/Info';
-import { Empty } from './components/Empty';
+import { Task } from './components/Task';
 
 import styles from './App.module.css';
 import './global.css';
@@ -17,7 +17,11 @@ function App() {
         <main>
           <div className={styles.tasks}>
             <Info />
-            <Empty />
+
+            <div className={styles.list}>
+              <Task />
+              <Task />
+            </div>
           </div>
         </main>
       </div>

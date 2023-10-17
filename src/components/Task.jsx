@@ -3,12 +3,16 @@ import { useState } from 'react';
 import { Circle, CheckCircle, Trash } from 'phosphor-react';
 import styles from './Task.module.css';
 
-export function Task({ task, onTaskComplete }) {
+export function Task({ task, taskId, onTaskComplete, onTaskDelete }) {
   const [isChecked, setIsChecked] = useState(false);
 
   const toggleCheckbox = () => {
     setIsChecked(!isChecked);
     onTaskComplete(!isChecked);
+  };
+
+  const handleDelete = () => {
+    onTaskDelete(taskId, isChecked);
   };
 
   return (
@@ -27,7 +31,7 @@ export function Task({ task, onTaskComplete }) {
         {task}
       </label>
 
-      <button title="Deletar tarefa">
+      <button title="Deletar tarefa" onClick={handleDelete}>
         <Trash />
       </button>
     </div>

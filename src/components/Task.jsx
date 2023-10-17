@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Circle, CheckCircle, Trash } from 'phosphor-react';
 import styles from './Task.module.css';
 
-export function Task({ onTaskComplete }) {
+export function Task({ task, onTaskComplete }) {
   const [isChecked, setIsChecked] = useState(false);
 
   const toggleCheckbox = () => {
@@ -24,7 +24,7 @@ export function Task({ onTaskComplete }) {
           }
         </div>
         
-        Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.
+        {task}
       </label>
 
       <button title="Deletar tarefa">

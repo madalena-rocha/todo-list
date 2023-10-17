@@ -1,5 +1,6 @@
 .task {
   display: flex;
+  justify-content: space-between;
   padding: 1.6rem;
   gap: 1.2rem;
 

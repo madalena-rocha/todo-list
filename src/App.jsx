@@ -9,7 +9,12 @@ import styles from './App.module.css';
 import './global.css';
 
 function App() {
+  const [tasks, setTasks] = useState([]);
   const [completedTasks, setCompletedTasks] = useState(0);
+
+  const handleTaskCreate = (newTask) => {
+    setTasks([...tasks, newTask]);
+  };  
 
   const handleTaskComplete = (isComplete) => {
     if (isComplete) {
@@ -24,15 +29,16 @@ function App() {
       <Header />
 
       <div className={styles.wrapper}>
-        <NewTask />
+        <NewTask onTaskCreate={handleTaskCreate} />
 
         <main>
           <div className={styles.tasks}>
             <Info completedTasks={completedTasks} />
 
             <div className={styles.list}>
-              <Task onTaskComplete={handleTaskComplete} />
-              <Task onTaskComplete={handleTaskComplete} />
+              {tasks.map((task) => (
+                <Task key={task.id} task={task.text} onTaskComplete={handleTaskComplete} />
+              ))}
             </div>
           </div>
         </main>

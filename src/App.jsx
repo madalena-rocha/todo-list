@@ -10,10 +10,12 @@ import './global.css';
 
 function App() {
   const [tasks, setTasks] = useState([]);
+  const [totalTasks, setTotalTasks] = useState(0);
   const [completedTasks, setCompletedTasks] = useState(0);
 
   const handleTaskCreate = (newTask) => {
     setTasks([...tasks, newTask]);
+    setTotalTasks(totalTasks + 1);
   };  
 
   const handleTaskComplete = (isComplete) => {
@@ -33,7 +35,7 @@ function App() {
 
         <main>
           <div className={styles.tasks}>
-            <Info completedTasks={completedTasks} />
+            <Info totalTasks={totalTasks} completedTasks={completedTasks} />
 
             <div className={styles.list}>
               {tasks.map((task) => (

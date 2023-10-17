@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Header } from './components/Header';
 import { NewTask } from './components/NewTask';
 import { Info } from './components/Info';
+import { Empty } from './components/Empty';
 import { Task } from './components/Task';
 
 import styles from './App.module.css';
@@ -43,12 +44,14 @@ function App() {
       <div className={styles.wrapper}>
         <NewTask onTaskCreate={handleTaskCreate} />
 
-        <main>
-          <div className={styles.tasks}>
-            <Info totalTasks={totalTasks} completedTasks={completedTasks} />
+        <main className={styles.tasks}>
+          <Info totalTasks={totalTasks} completedTasks={completedTasks} />
 
-            <div className={styles.list}>
-              {tasks.map((task) => (
+          <div className={styles.list}>
+            {tasks.length === 0 ? (
+              <Empty />
+            ) : (
+              tasks.map((task) => (
                 <Task
                   key={task.id}
                   task={task.text}
@@ -56,8 +59,8 @@ function App() {
                   onTaskComplete={handleTaskComplete}
                   onTaskDelete={handleTaskDelete}
                 />
-              ))}
-            </div>
+              ))
+            )}
           </div>
         </main>
       </div>

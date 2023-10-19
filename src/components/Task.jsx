@@ -20,7 +20,7 @@ export function Task({ task, taskId, onTaskComplete, onTaskDelete }) {
       <label className={isChecked ? styles.completed : ''}>
         <input type="checkbox" checked={isChecked} onChange={toggleCheckbox} />
         
-        <div>
+        <div title={isChecked ? "Tarefa concluída" : "Tarefa não concluída"}>
           {
             isChecked ? 
             <CheckCircle weight="fill" className={styles.checkCircle} /> : 

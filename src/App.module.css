@@ -18,3 +18,13 @@
   flex-direction: column;
   gap: 1.2rem;
 }
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+
+  .wrapper {
+    margin-inline: 1.6rem;
+  }
+}

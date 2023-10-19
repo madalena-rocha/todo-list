@@ -10,7 +10,7 @@ export function Info({ totalTasks, completedTasks }) {
 
       <div className={styles.done}>
         <strong>Concluídas</strong>
-        <span>{ completedTasks } de {totalTasks}</span>
+        <span>{completedTasks} de {totalTasks}</span>
       </div>
     </div>
   );

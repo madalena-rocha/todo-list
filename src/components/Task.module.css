@@ -38,12 +38,18 @@
 
   width: 2.4rem;
   height: 2.4rem;
+  border-radius: 4px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
   cursor: pointer;
+}
+
+.task label:focus-within div {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--gray-100);
 }
 
 .task label div svg {
